@@ -27,6 +27,27 @@ public class LonelyTwitterActivity extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+
+		ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
+
+		/////////////////////////////////////////////////
+		try{
+		/*Important*/Tweet importantTweet = new ImportantTweet("");
+		importantTweet.isImportant();
+		ImportantTweet importantTweet2 = new ImportantTweet("");
+		importantTweet2.isImportant();
+
+		Tweetable t = new ImportantTweet("");
+		t.getText();
+
+		Tweet t2 = new ImportantTweet("");
+			t2.setText("");
+
+		} catch (TweeTooLongException e){
+			throw new RuntimeException(e);
+		}
+
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
