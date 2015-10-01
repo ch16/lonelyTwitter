@@ -45,4 +45,5 @@ public abstract class Tweet extends Object implements Tweetable {
     public String toString(){
         return date.toString() + " || " + this.text;
     }
+
 }
