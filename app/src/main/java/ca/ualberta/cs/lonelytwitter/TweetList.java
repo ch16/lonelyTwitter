@@ -5,7 +5,9 @@ import java.util.ArrayList;
 /**
  * Created by chen1 on 9/30/15.
  */
-public class TweetList {
+public class TweetList implements MyObservable {
+    private ArrayList<MyObserver> myObservers = new ArrayList<MyObserver>();
+
     public ArrayList tweets = new ArrayList<Tweet>();
     public void deletetweet(Tweet tweet){
         //important codes here
@@ -13,12 +15,24 @@ public class TweetList {
         return;
     }
 
+    public void addObserver(MyObserver observer){
+        myObservers.add(observer);
+    }
+
+    public void notifyObservers(){
+        for (MyObserver observer : myObservers){
+            observer.myNotify();
+        }
+    }
+
+
     public void add(Tweet tweet) {
         if (tweets.contains(tweet)) {
             throw new IllegalArgumentException("Already Exists");
         } else {
             tweets.add(tweet);
         }
+        notifyObservers();
     }
 
     public void remove(Tweet tweet){
