@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
-public class EditTweetAcivity extends Activity {
-
+public class EditTweetActivity extends Activity {
+    private Button saveButton;
+    public Button getSaveButton() {
+        return saveButton;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
